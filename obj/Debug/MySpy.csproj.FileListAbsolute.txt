@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\DoAnMang\MySpy\bin\Debug\MySpy.exe.config
+C:\Users\Admin\source\repos\DoAnMang\MySpy\bin\Debug\MySpy.exe
+C:\Users\Admin\source\repos\DoAnMang\MySpy\bin\Debug\MySpy.pdb
+C:\Users\Admin\source\repos\DoAnMang\MySpy\bin\Debug\HookHandlerDLL.dll
+C:\Users\Admin\source\repos\DoAnMang\MySpy\bin\Debug\HookHandlerDLL.pdb
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.csprojResolveAssemblyReference.cache
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.Properties.Resources.resources
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.csproj.CopyComplete
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.exe
+C:\Users\Admin\source\repos\DoAnMang\MySpy\obj\Debug\MySpy.pdb
